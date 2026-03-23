@@ -1,12 +1,23 @@
-import Navbar from "./components/Navbar"
+import { useState } from "react";
 
 const App = () => {
+
+  const [x, setx] = useState(0);
+
+  const btnClick = () => {
+    console.log("Clicked");
+    setx(x + 1);
+    console.log(x);
+  };
+
   return (
     <div>
-      <Navbar/>
+      {x}
+      <button onClick={() => { btnClick(); }}>
+        Click me
+      </button>
     </div>
-  )
-}
+  );
+};
 
-
-export default App
+export default App;
