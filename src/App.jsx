@@ -17,7 +17,7 @@ const App = () => {
       <button onClick={() => { btnClick(); }}>
         Click me
       </button>
-      <FirstComponent />
+      <FirstComponent data={x} />
     </div>
   );
 };
