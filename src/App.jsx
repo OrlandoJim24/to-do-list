@@ -2,22 +2,21 @@ import { useState } from "react";
 import { FirstComponent } from "./components/FirstComponent";
 
 const App = () => {
+  const [clickCount, setClickCount] = useState(0);
 
-  const [x, setx] = useState(0);
-
-  const btnClick = () => {
-    console.log("Clicked");
-    setx(x + 1);
-    console.log(x);
+  const handleButtonClick = () => {
+    setClickCount(clickCount + 1);
   };
 
   return (
-    <div>
-      {x}
-      <button onClick={() => { btnClick(); }}>
-        Click me
-      </button>
-      <FirstComponent data={x} />
+    <div className="app-container">
+      <div className="click-counter">
+        <h1>Total Clicks: {clickCount}</h1>
+        <button onClick={handleButtonClick} className="btn-primary">
+          Click me
+        </button>
+      </div>
+      <FirstComponent data={clickCount} />
     </div>
   );
 };
