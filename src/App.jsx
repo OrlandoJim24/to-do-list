@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import PropTypes from "prop-types";
 import { FirstComponent } from "./components/FirstComponent";
 
 const App = () => {
   const [clickCount, setClickCount] = useState(0);
 
-  const handleButtonClick = () => {
-    setClickCount(clickCount + 1);
-  };
+  // Memoized callbacks to prevent unnecessary re-renders
+  const handleButtonClick = useCallback(() => {
+    setClickCount(prev => prev + 1);
+  }, []);
 
-  const handleReset = () => {
+  const handleReset = useCallback(() => {
     setClickCount(0);
-  };
+  }, []);
 
   const isCounterActive = clickCount > 0;
 
@@ -41,10 +43,22 @@ const App = () => {
           )}
         </div>
 
-        <FirstComponent data={clickCount} />
+        <FirstComponent 
+          data={clickCount}
+          onReset={handleReset}
+        />
       </div>
     </div>
   );
+};
+
+App.propTypes = {
+  // Component props validation
+};
+
+FirstComponent.propTypes = {
+  data: PropTypes.number.isRequired,
+  onReset: PropTypes.func,
 };
 
 export default App;
