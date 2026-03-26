@@ -1,4 +1,5 @@
 import { useState } from "react";
+import FirstComponent from "./components/FirstComponent";
 
 const App = () => {
 
@@ -16,8 +17,9 @@ const App = () => {
       <button onClick={() => { btnClick() }}>
         Click me
       </button>
+      <FirstComponent data={x} />
     </div>
   );
 };
-
+d
 export default App;
