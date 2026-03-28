@@ -1,25 +1,17 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import FirstComponent from "./components/FirstComponent";
 
 const App = () => {
 
-  const [x, setx] = useState(0);
-
-  const btnClick = () => {
-    console.log("Clicked");
-    setx(x + 1);
-    console.log(x);
-  };
+  const inputRef = useRef(null);
 
   return (
     <div>
-      {x}
-      <button onClick={() => { btnClick() }}>
-        Click me
-      </button>
-      <FirstComponent data={x} fn={setx} />
+       <input type="text" />
+       <button>Submit</button>
+
     </div>
-  );
+  )
 };
 
 export default App;
