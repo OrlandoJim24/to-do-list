@@ -17,9 +17,9 @@ const App = () => {
       <button onClick={() => { btnClick() }}>
         Click me
       </button>
-      <FirstComponent data={x} />
+      <FirstComponent data={x} fn={setx} />
     </div>
   );
 };
-d
+
 export default App;
