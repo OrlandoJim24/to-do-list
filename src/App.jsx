@@ -3,12 +3,14 @@ import FirstComponent from "./components/FirstComponent";
 
 const App = () => {
 
+  const [data, setData] = useState([]);
   const inputRef = useRef(null);
 
   return (
     <div>
-       <input type="text" />
-       <button>Submit</button>
+       <input ref={inputRef} type="text" />
+       <button onClick={() => { setData([...data, inputRef.current.value]); inputRef.current.value = ""; }}>Submit</button>
+       {data.map((item, index) => { return <h2 key={index}>{item}</h2> })}
 
     </div>
   )
