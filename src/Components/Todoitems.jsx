@@ -1,4 +1,4 @@
-import React from 'react'
+import './CSS/Todoitems.css'
 
 const Todoitems = () => {
   return (
@@ -6,4 +6,4 @@ const Todoitems = () => {
   )
 }
 
-export default Todoitems    
+export default Todoitems
