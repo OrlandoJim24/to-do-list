@@ -1,9 +1,20 @@
-import '../Todo.css';
+import './CSS/Todo.css'
 
 const Todo = () => {
   return (
-    <div>Todo</div>
+    <div className='todo'>
+      <div className="todo-header">To-Do List</div>
+
+      <div className="todo-add">
+        <input type="text" placeholder='Add Your Task' />
+        <div className="todo-add-btn">ADD</div>
+      </div>
+
+      <div className="todo-list">
+
+      </div>
+    </div>
   )
 }
 
-export default Todo;
+export default Todo

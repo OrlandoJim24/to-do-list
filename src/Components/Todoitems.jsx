@@ -1,11 +1,9 @@
- import './CSS/Todoitems.css';
+import React from 'react'
 
- const Todoitems = () => {
+const Todoitems = () => {
   return (
-    <div className='todo'>
-        <div className="todo-header"></div>
-    </div>
+    <div>Todoitems</div>
   )
 }
 
-export default Todoitems;
+export default Todoitems    
