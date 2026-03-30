@@ -12,7 +12,7 @@ const Todoitems = ({ no, display, text }) => {
             <div className="todoitems-text">{text}</div>
 
         </div>
-        <img src={cross} alt=""/>
+        <img className="todoitems-cross-icon" src={cross} alt="Delete"/>
     </div>
   )
 }
