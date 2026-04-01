@@ -14,3 +14,8 @@
   color: #404040;
   font-size: 22px;
 }
+
+.todoitems-cross-icon{
+    cursor: pointer;
+    padding-left: 25px;
+}
