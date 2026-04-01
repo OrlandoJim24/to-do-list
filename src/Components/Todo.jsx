@@ -15,11 +15,19 @@ const Todo = () => {
         inputRef.current.value = "";
     }
 
-  useEffect(() => {
-     console.log(todos);
-     localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos])
+    useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem("todos")));
+    }, [])
 
+  useEffect(() => {
+    setTimeout(() => { 
+    console.log(todos);
+     localStorage.setItem("todos", JSON.stringify(todos));
+     
+  }, 100 );
+}, [todos])
+
+  
   return (
     <div className='todo'>
      <div className="todo-header">To-Do List</div>
