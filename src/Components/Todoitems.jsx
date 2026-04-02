@@ -7,8 +7,7 @@ const Todoitems = ({ no, display, text }) => {
   return (
     <div className='todoitems'>
         <div className="todoitems-container">
-            <img src={non_tick} alt="Tick"/>
-            <img src={tick} alt="Non-Tick"/>
+            {display==="" ?<img src={non_tick} alt=""   /> : <img src={tick} alt="Tick"/>}
             <div className="todoitems-text">{text}</div>
 
         </div>
