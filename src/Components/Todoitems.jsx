@@ -3,10 +3,25 @@ import tick from './Assets/tick.png'
 import non_tick from './Assets/not_tick.png'
 import cross from './Assets/cross.png'
 
-const Todoitems = ({ no, display, text }) => {
-  return (
+const Todoitems = ({ no, display, text, setTodos }) => {
+  
+   const toggle = (no) => {
+    let data = JSON.parse(localStorage.getItem("todos"));
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].no === no) {
+        if (data[i].display === "") {  
+            data[i].display = "line-through";
+        } else {
+            data[i].display = "";
+        }
+        break;
+      }
+    }
+    setTodos(data);
+  }
+    return (
     <div className='todoitems'>
-        <div className="todoitems-container">
+        <div className="todoitems-container" onClick={()=>{toggle(no)}}>
             {display==="" ?<img src={non_tick} alt=""   /> : <img src={tick} alt="Tick"/>}
             <div className="todoitems-text">{text}</div>
 
