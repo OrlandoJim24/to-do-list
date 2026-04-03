@@ -21,7 +21,7 @@ const Todoitems = ({ no, display, text, setTodos }) => {
   }
     return (
     <div className='todoitems'>
-        <div className="todoitems-container" onClick={()=>{toggle(no)}}>
+        <div className=  {`todoitems-container ${display}`} onClick={()=>{toggle(no)}}>
             {display==="" ?<img src={non_tick} alt=""   /> : <img src={tick} alt="Tick"/>}
             <div className="todoitems-text">{text}</div>
 
