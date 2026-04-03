@@ -5,6 +5,12 @@ import cross from './Assets/cross.png'
 
 const Todoitems = ({ no, display, text, setTodos }) => {
   
+   const deleteTodo = (no) => {
+    let data = JSON.parse(localStorage.getItem("todos"));   
+    data = data.filter((item) => item.no !== no);
+    setTodos(data);
+  } 
+
    const toggle = (no) => {
     let data = JSON.parse(localStorage.getItem("todos"));
     for (let i = 0; i < data.length; i++) {
@@ -26,7 +32,7 @@ const Todoitems = ({ no, display, text, setTodos }) => {
             <div className="todoitems-text">{text}</div>
 
         </div>
-        <img className="todoitems-cross-icon" src={cross} alt="Delete"/>
+        <img className="todoitems-cross-icon" onClick={()=>{deleteTodo(no)}} src={cross} alt="Delete"/>
     </div>
   )
 }
