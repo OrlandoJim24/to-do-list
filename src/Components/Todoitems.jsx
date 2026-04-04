@@ -5,11 +5,12 @@ import cross from './Assets/cross.png'
 
 const Todoitems = ({ no, display, text, setTodos }) => {
   
-   const deleteTodo = (no) => {
-    let data = JSON.parse(localStorage.getItem("todos"));   
-    data = data.filter((item) => item.no !== no);
-    setTodos(data);
-  } 
+ const deleteTodo = (no) => {
+  let data = JSON.parse(localStorage.getItem("todos")) || [];
+  data = data.filter((item) => item.no !== no);
+  localStorage.setItem("todos", JSON.stringify(data));
+  setTodos(data);
+}
 
    const toggle = (no) => {
     let data = JSON.parse(localStorage.getItem("todos"));
