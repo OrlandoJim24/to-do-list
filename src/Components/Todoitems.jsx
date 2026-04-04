@@ -29,11 +29,20 @@ const Todoitems = ({ no, display, text, setTodos }) => {
     return (
     <div className='todoitems'>
         <div className=  {`todoitems-container ${display}`} onClick={()=>{toggle(no)}}>
-            {display==="" ?<img src={non_tick} alt=""   /> : <img src={tick} alt="Tick"/>}
+           {display === "" ? (
+  <img src={non_tick} alt="Incomplete task" />
+) : (
+  <img src={tick} alt="Completed task" />
+)}
             <div className="todoitems-text">{text}</div>
 
         </div>
-        <img className="todoitems-cross-icon" onClick={()=>{deleteTodo(no)}} src={cross} alt="Delete"/>
+        <img
+  className="todoitems-cross-icon"
+  onClick={() => { deleteTodo(no) }}
+  src={cross}
+  alt="Delete task"
+/>
     </div>
   )
 }
