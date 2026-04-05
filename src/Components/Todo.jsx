@@ -17,8 +17,8 @@ const Todo = () => {
     }
 
     useEffect(() => {
-    setTodos(JSON.parse(localStorage.getItem("todos")));
-    count = localStorage.getItem("todos_count")
+    const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+  const savedCount = Number(localStorage.getItem("todos_count")) || 0;
     }, [])
 
   useEffect(() => {
