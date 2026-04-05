@@ -25,12 +25,8 @@ const Todo = () => {
   const savedCount = Number(localStorage.getItem("todos_count")) || 0;
     }, [])
 
-  useEffect(() => {
-    setTimeout(() => { 
-    console.log(todos);
-     localStorage.setItem("todos", JSON.stringify(todos));
-     
-  }, 100 );
+ useEffect(() => {
+  localStorage.setItem("todos", JSON.stringify(todos));
 }, [todos])
 
   
