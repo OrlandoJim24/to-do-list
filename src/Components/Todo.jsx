@@ -11,10 +11,14 @@ const Todo = () => {
     const inputRef = useRef(null);
 
     const add = () => {
-        setTodos([...todos, {no:count++, text: inputRef.current.value, display: ""}]);
-        inputRef.current.value = "";
-        localStorage.setItem("todos_count", count);
-    }
+  const value = inputRef.current.value.trim();
+
+  if (value === "") return;
+
+  setTodos([...todos, { no: count++, text: value, display: "" }]);
+  inputRef.current.value = "";
+  localStorage.setItem("todos_count", count);
+}
 
     useEffect(() => {
     const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
