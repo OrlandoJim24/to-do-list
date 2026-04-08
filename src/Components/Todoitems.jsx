@@ -40,7 +40,10 @@ const Todoitems = ({ no, display, text, setTodos }) => {
         </div>
         <img
   className="todoitems-cross-icon"
-  onClick={() => { deleteTodo(no) }}
+  onClick={(e) => {
+    e.stopPropagation();
+    deleteTodo(no);
+  }}
   src={cross}
   alt="Delete task"
 />
