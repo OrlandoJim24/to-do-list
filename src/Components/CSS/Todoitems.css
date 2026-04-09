@@ -7,6 +7,8 @@
 
 .todoitems-container {
   display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .todoitems-text {
