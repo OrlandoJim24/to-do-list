@@ -26,3 +26,9 @@
     text-decoration: line-through solid #ADADAD 3px;
     color: #b3b3b3;
 }
+
+.todoitems-cross-icon:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
