@@ -13,7 +13,7 @@
 }
 
 .todoitems-text {
-  padding-left: 16px;
+  padding-left: 1rem; /* antes 16px */
   color: #404040;
   font-size: 1.25rem;
   font-weight: 500;
