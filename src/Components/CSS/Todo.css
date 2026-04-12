@@ -39,19 +39,6 @@
 }
 
 .todo-add-btn {
-    border-radius: 50%;
-    background-color: #002765;
-    color: white;
-    border: none;
-    outline: none;
-    margin-left: 20px;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.todo-add-btn {
   border-radius: 50px;
   background: #ff6739;
   width: 187px;
@@ -64,4 +51,6 @@
   font-size: 26px;
   font-weight: 600;
   cursor: pointer;
+  border: none;
+  outline: none;
 }
