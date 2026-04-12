@@ -5,6 +5,7 @@
   align-items: center;
 }
 
+
 .todoitems-container {
   display: flex;
   align-items: center;
@@ -22,6 +23,7 @@
 .todoitems-cross-icon{
     cursor: pointer;
     padding-left: 25px;
+    transition: 0.2s ease;
 }
 
 .line-through {
